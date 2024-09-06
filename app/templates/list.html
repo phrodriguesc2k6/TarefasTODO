@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+  <form method="GET" action="{% url 'list_view' %}">
+    <center>    
+        <input type="text" name="search" placeholder="Buscar Tarefas...">
+        <button type="submit">Buscar</button>
+    </center>
+  </form>
+
+
+  <div class="tarefa-grid">
+    {% if all_list %}
+      {% for tarefas in all_list %}
+        <div class="list-card">
+          <h2>{{ tarefas.Name }} <br> <br> {{ tarefas.Description }}</h2>
+          <p><h3>Criado em:</h3>{{ tarefas.Create_At }}<br> <h3>Prazo de:</h3>{{ tarefas.Deadline }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-results">Nenhuma tarefa encontrada.</p>
+    {% endif %}
+  </div>
+{% endblock content %}
+
+
