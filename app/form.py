@@ -5,4 +5,4 @@ class formulario(forms.ModelForm):
     
     class Meta:
         model = list
-        fields = '__all__'
+        fields = ["Name", "Description", "Deadline", "TimeScale"]
