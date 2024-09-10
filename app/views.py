@@ -12,6 +12,7 @@ def list_view(request):
         all_list = list.objects.all()
     return render(request, 'list.html', {'all_list': all_list})
 
+
 def form_view(request):
     if request.method == "POST":
         form = formulario(request.POST, request.FILES)
@@ -23,20 +24,18 @@ def form_view(request):
     return render(request, 'list_form.html', {'form':form})
 
 
-
-
-
-def delete_list(request, list_id):
+def delete_list(request, Task_id):
     if request.method == 'POST':
-        lst = get_object_or_404(list, id=list_id)
-        list.delete()
-        return redirect('list_view')  # Redireciona de volta para a página principal
+        Task = get_object_or_404(list, id=Task_id)
+        Task.delete()
+        return redirect('list_view')
 
-    return redirect('list_view')  # Em caso de acesso não autorizado
+    return redirect('list_view')
+
+    
 
     
 
-    
 
     
 

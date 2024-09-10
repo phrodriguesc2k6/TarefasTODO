@@ -20,6 +20,6 @@ class list(models.Model):
     Finished_At=models.DateTimeField(null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.model
+        return self.Name
 
     

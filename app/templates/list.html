@@ -18,8 +18,7 @@
             <h3>Criado em:</h3>{{ tarefas.Create_At }}<br> 
             <h3>Prazo de:</h3>{{ tarefas.Deadline }} {{ tarefas.TimeScale }}
           </p>
-          <!-- Formulário para exclusão da tarefa -->
-          <form method="POST" action="{% url 'delete_list' tarefas.id %}" style="display:inline;">
+          <form method="POST" action="{% url 'delete_task' tarefas.id %}" style="display:inline;">
             {% csrf_token %}
             <button type="submit" onclick="return confirm('Tem certeza de que deseja excluir esta tarefa?');">Excluir</button>
           </form>
