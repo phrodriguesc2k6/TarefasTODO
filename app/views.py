@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import list
 from .form import formulario
 
@@ -22,7 +22,18 @@ def form_view(request):
         form = formulario()
     return render(request, 'list_form.html', {'form':form})
 
-        
+
+
+
+
+def delete_list(request, list_id):
+    if request.method == 'POST':
+        lst = get_object_or_404(list, id=list_id)
+        list.delete()
+        return redirect('list_view')  # Redireciona de volta para a página principal
+
+    return redirect('list_view')  # Em caso de acesso não autorizado
+
     
 
     

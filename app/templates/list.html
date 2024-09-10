@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-
-
   <form method="GET" action="{% url 'list_view' %}">
     <center>    
         <input type="text" name="search" placeholder="Buscar Tarefas...">
@@ -11,14 +8,21 @@
     </center>
   </form>
 
-
   <div class="tarefa-grid">
     {% if all_list %}
       {% for tarefas in all_list %}
         <div class="list-card">
-          <br> <br> <br> <hr> 
+          <br> <br> <br> <hr>
           <h2>{{ tarefas.Name }} <br> <br> {{ tarefas.Description }}</h2>
-          <p><h3>Criado em:</h3>{{ tarefas.Create_At }}<br> <h3>Prazo de:</h3>{{ tarefas.Deadline }} {{tarefas.TimeScale}}</p>
+          <p>
+            <h3>Criado em:</h3>{{ tarefas.Create_At }}<br> 
+            <h3>Prazo de:</h3>{{ tarefas.Deadline }} {{ tarefas.TimeScale }}
+          </p>
+          <!-- Formulário para exclusão da tarefa -->
+          <form method="POST" action="{% url 'delete_list' tarefas.id %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" onclick="return confirm('Tem certeza de que deseja excluir esta tarefa?');">Excluir</button>
+          </form>
         </div>
       {% endfor %}
     {% else %}
@@ -26,5 +30,3 @@
     {% endif %}
   </div>
 {% endblock content %}
-
-
