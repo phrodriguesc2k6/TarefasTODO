@@ -1,20 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
     padding: 20px;
+    background: linear-gradient(135deg, #6a0dad, #5b0a9b);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 form {
     display: flex;
     border-radius: 25px;
     overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .search-input {
@@ -25,10 +31,16 @@ form {
     outline: none;
     font-size: 16px;
     color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
 }
 
 .search-input::placeholder {
     color: #888;
+}
+
+.search-input:focus {
+    border-color: #5b0a9b; /* Tom de roxo mais escuro ao focar */
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Adiciona uma sombra ao foco */
 }
 
 .search-button {
@@ -39,10 +51,12 @@ form {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
 }
 
 .search-button:hover {
     background-color: #5b0a9b; /* Tom de roxo mais escuro */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
 }
 
 .tarefa-grid {
@@ -53,7 +67,7 @@ form {
 }
 
 .list-card {
-    background-color: white;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -61,6 +75,29 @@ form {
     padding: 20px;
     width: 300px;
     text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.2s ease; /* Transição suave */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o card */
+    word-wrap: break-word; /* Quebra de palavras longas */
+}
+
+.list-card h2, .list-card p {
+    margin: 0;
+    padding: 0;
+}
+
+.list-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.list-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.list-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta a sombra ao passar o mouse */
+    transform: scale(1.02); /* Aumenta o card ao passar o mouse */
 }
 
 .no-results {
@@ -71,17 +108,29 @@ form {
 
 button {
     cursor: pointer;
-}
-ont-size: 18px;
+    border: none;
+    background: none;
+    font-size: 18px;
     color: #555;
+    transition: color 0.3s ease; /* Transição suave */
 }
 
-button {
-    cursor: pointer;
-}ont-size: 18px;
-    color: #555;
+button:hover {
+    color: #333; /* Escurece a cor do texto ao passar o mouse */
 }
 
-button {
-    cursor: pointer;
+.delete-button {
+    background-color: #e74c3c; /* Cor vermelha destacada */
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 2px solid #c0392b; /* Cor do contorno */
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* Transições suaves */
+}
+
+.delete-button:hover {
+    background-color: #c0392b; /* Tom mais escuro de vermelho */
+    border-color: #e74c3c; /* Cor do contorno ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
 }
