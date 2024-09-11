@@ -2,39 +2,35 @@
 <!DOCTYPE html>
 <html lang='pt-BR'>
     <head>
-        <link rel="stylesheet" href="{% static 'css/list.css' %}">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/list.css' %}">
+        <link rel="stylesheet" href="{% static 'css/EditButton.css' %}">
+
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TodoList</title>
     </head>
-
     <body>
-
         <header>
             <nav>
               <ul>
-                <li><a link href="{% url 'form_view' %}">Adicionar Tarefas</a></li>
+                <li><a link href="{% url 'list_view' %}">Tarefas</a></li>
+                <li><a href="{% url 'form_view' %}">Adicionar Tarefas</a></li>
               </ul>
             </nav>
-          </header>
+        </header>
+
+
         <center>
         <h1> T A R E F A S</h1>
+        <hr>
         </center>
         <br>
-
         <main>
             {% block content %}{% endblock %}
         </main>
-    
-          <footer>
+        <footer>
             <p>&copy; 2024 Pedro Henrique/Gustavo/Gabriel</p>
-          </footer>
-
-          
+        </footer>
     </body>
-
-    
-
-
 </html>

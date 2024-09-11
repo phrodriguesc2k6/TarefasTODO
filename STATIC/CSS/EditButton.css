@@ -1,0 +1,16 @@
+
+.edit-button {
+    background-color: #f1c40f; /* Cor amarela */
+    color: black;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 2px solid #f39c12; /* Cor do contorno amarela */
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* Transições suaves */
+}
+
+.edit-button:hover {
+    background-color: #f39c12; /* Tom mais escuro de amarelo */
+    border-color: #f1c40f; /* Cor do contorno ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+  <center>
+    <h1>Editar Tarefa</h1>
+    <hr>
+
+  </center>
+
+  
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+
+{% endblock %}
+
+
+
+
+
+
+

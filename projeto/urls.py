@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import list_view, form_view
+from app.views import list_view, form_view, editar_tarefa
 from app import views
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     path('list/', list_view, name='list_view'),
     path('form/', form_view, name='form_view'),
     path('delete_task/<int:Task_id>/', views.delete_list, name='delete_task'),
+    path('tarefa/<int:tarefa_id>/editar/', editar_tarefa, name='editar_tarefa'),
 ]
